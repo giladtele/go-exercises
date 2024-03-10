@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type Shape interface {
 	Area() float64
 }
@@ -20,6 +22,6 @@ func main() {
 	var cubixes []Embed
 	cubixes = append(cubixes, Cube{12})
 	for _, cubix := range cubixes {
-		cubix.Area()
+		fmt.Println(cubix.Area())
 	}
 }
