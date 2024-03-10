@@ -19,21 +19,16 @@ type Cube struct {
 	Size      float64
 }
 
-type Shp struct {
-	Material string
-	Size     float64
-}
-
 func (c Cube) Area() float64 {
 	return 6 * (c.Size * c.Size)
 }
 
-func (m Cube) Material() string {
-	return m.Substance
+func (c Cube) Material() string {
+	return c.Substance
 }
 
-func (v Cube) Volume() float64 {
-	return (v.Size * v.Size * v.Size)
+func (c Cube) Volume() float64 {
+	return (c.Size * c.Size * c.Size)
 }
 
 func main() {
