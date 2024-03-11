@@ -1,0 +1,10 @@
+# Gorutine Exercises
+
+1. __Simple Goroutine Execution:__ Start with a basic exercise where you create a goroutine that prints numbers from 1 to 10. Main goroutine should wait for the child goroutine to finish before exiting.
+2. __Channel Communication:__ Create two goroutines where one sends numbers from 1 to 10 to a channel, and the other goroutine receives these numbers from the channel and prints them.
+3. __Producer-Consumer:__ Implement a producer-consumer scenario where the producer generates random numbers and sends them to a channel, while the consumer reads these numbers from the channel and prints them.
+4. __Fan-In:__ Create multiple goroutines (producers) that generate random numbers and send them to the same channel. Have a single consumer goroutine that reads from that channel and prints the numbers.
+5. __Select Statement:__ Use a select statement with multiple case operations involving channels. For instance, you could have a goroutine sending numbers to one channel, another goroutine sending strings to a second channel, and a third goroutine using select to receive from both channels.
+6. __Buffered Channels:__ Experiment with buffered channels. Create a producer that sends several integers to a channel and a consumer that reads these integers. Use a buffered channel and observe how the program's behavior changes compared to an unbuffered channel.
+7. __Timeouts and Cancellation:__ Implement a pattern where you can cancel a long-running goroutine using a context package. For instance, start a goroutine that performs a time-consuming task (like a loop with sleep statements) and cancels it using a context after a certain timeout.
+8. __Dining Philosophers Problem:__ This classic synchronization problem is a great exercise for understanding goroutines and channels. Implement a solution where philosophers (represented by goroutines) dine and think concurrently without causing a deadlock.
