@@ -65,5 +65,5 @@ func main() {
 	endTime := time.Now()
 
 	executionTime := endTime.Sub(startTime)
-	fmt.Printf("Program executed in%v\n", executionTime)
+	fmt.Printf("Program executed in: %v\n", executionTime)
 }
