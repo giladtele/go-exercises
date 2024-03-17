@@ -9,7 +9,7 @@ import (
 
 func sendNums(numsChan chan int, wg *sync.WaitGroup) {
 	defer wg.Done()          // `defer` makes sure `wg.Done()` will only execute when the function nears its return phase
-	for i := 0; i < 4; i++ { // Loop 4 times to send 4 numbers
+	for i := 0; i < 4; i++ { // Loop 4 times to send 4 random numbers
 		numsChan <- rand.Intn(100)
 	}
 }
@@ -51,7 +51,7 @@ func main() {
 
 	go selectChans(numsChan, strChan)
 
-	for i := 0; i < 5; i++ { // Start 5 goroutines
+	for i := 0; i < 5; i++ { // Start 5 goroutines that trigger `sendNums` each
 		wgNums.Add(1)
 		go sendNums(numsChan, &wgNums)
 	}
