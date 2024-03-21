@@ -5,14 +5,14 @@ import (
 	"net/http"
 )
 
-const portNum = ":8081"
+const portNum = ":8082"
 
-func Home(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "hello from the homepage")
+func About(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "hello from the about page")
 }
 
 func main() {
-	http.HandleFunc("/home", Home)
+	http.HandleFunc("/about", About)
 
 	fmt.Println(fmt.Sprintf("Starting application on port %s", portNum))
 	_ = http.ListenAndServe(portNum, nil)
