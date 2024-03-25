@@ -2,13 +2,24 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"net/http"
+	"text/template"
 )
 
 const portNum = ":8082"
 
 func About(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "hello from the about page")
+	renderTemplate(w, "about.page.html")
+}
+
+func renderTemplate(w http.ResponseWriter, tmpl string) {
+	parsedTemplate, _ := template.ParseFiles("./templates/" + tmpl)
+	err := parsedTemplate.Execute(w, nil)
+	if err != nil {
+		log.Fatafl("error parsing template:", err)
+		return
+	}
 }
 
 func main() {
